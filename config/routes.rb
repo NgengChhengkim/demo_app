@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+
   root 'static_page#home'
   resources :users do
     member do

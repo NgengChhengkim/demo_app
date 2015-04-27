@@ -8,6 +8,7 @@ class MicropostsController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
+  helper_method :edit
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
