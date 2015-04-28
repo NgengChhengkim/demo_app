@@ -1,0 +1,6 @@
+<%= form_for(@comment) do |f| %>
+ <%= f.hidden_field :micropost_id, value: params[:id] %>
+ <%= f.text_area :comment %>
+ <%= f.submit 'Comment', class: 'btn btn-primary' %>
+
+<% end %>

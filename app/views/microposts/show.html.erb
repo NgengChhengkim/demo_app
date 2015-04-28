@@ -1,0 +1,15 @@
+<div class='row'>
+	<div class='col-md-8'>
+	  <%= render 'shared/micropost' %>
+
+	  <% if logged_in? && (current_user?(@micropost.user) || current_user.following?(@micropost.user)) %>
+	    <%= render 'shared/comment_form' %>
+	   <% else %>
+	    <div class='alert alert-danger'>Comment is not allowed</div>
+	  <% end %>
+	  <h3>Comment</h3>
+	   <%= render @comments %>
+	   <%= will_paginate @comments %>
+	</div>
+
+</div>
